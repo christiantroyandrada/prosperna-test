@@ -27,8 +27,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      items: []
+    };
+  },
+  methods: {
+    read: function read() {
+      var _this = this;
+
+      axios.get('/api/items').then(function (data) {
+        _this.items = data.data;
+        console.log(_this.items);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    },
+    route: function route(_route) {
+      this.$router.push(_route)["catch"](function () {});
+    }
+  },
   mounted: function mounted() {
+    this.read();
     console.log('Component mounted.');
   }
 });
@@ -119,32 +156,99 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("LANDING PAGE Component"),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
+  return _c(
+    "v-container",
+    { attrs: { fluid: "" } },
+    [
+      _c(
+        "v-row",
+        { staticClass: "align-center" },
+        [
+          _c(
+            "v-col",
+            {
+              staticClass: "justify-content-center text-center",
+              attrs: { cols: "12" },
+            },
+            [_c("h1", [_vm._v("Featured Items")])]
+          ),
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-row",
+        { staticClass: "align-center" },
+        _vm._l(_vm.items, function (item, i) {
+          return _c(
+            "v-col",
+            {
+              key: i,
+              staticClass: "justify-content-center text-center",
+              attrs: { cols: "12", xs: "12", sm: "4" },
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c("v-img", { attrs: { src: item.image, height: "250" } }),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-title",
+                    { staticClass: "justify-content-center" },
+                    [_vm._v(_vm._s(item.name))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-text",
+                    [
+                      _c("v-row", { staticClass: "mx-auto" }, [
+                        _c("h5", { staticClass: "text-success" }, [
+                          _vm._v("$" + _vm._s(item.price)),
+                        ]),
+                      ]),
+                      _vm._v(" "),
+                      _c("v-row", { attrs: { align: "center" } }, [
+                        _c("h5", [_vm._v(_vm._s(item.description))]),
+                      ]),
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { color: "primary", text: "" },
+                          on: {
+                            click: function ($event) {
+                              return _vm.route("/view-product/" + item.id)
+                            },
+                          },
+                        },
+                        [_vm._v("Check it out!")]
+                      ),
+                    ],
+                    1
+                  ),
+                ],
+                1
               ),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+            ],
+            1
+          )
+        }),
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

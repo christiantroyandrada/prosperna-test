@@ -5299,6 +5299,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  methods: {
+    route: function route(_route) {
+      this.$router.push(_route)["catch"](function () {});
+    }
+  },
   mounted: function mounted() {
     console.log('Component mounted.');
   }
@@ -28537,7 +28542,17 @@ var render = function () {
             _vm._v("The"),
           ]),
           _vm._v("  \n        "),
-          _c("h2", [_vm._v("Market")]),
+          _c(
+            "h2",
+            {
+              on: {
+                click: function ($event) {
+                  return _vm.route("/")
+                },
+              },
+            },
+            [_vm._v("Market")]
+          ),
           _vm._v(" "),
           _c("v-spacer"),
         ],

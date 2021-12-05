@@ -6,7 +6,7 @@
             dark
         >
             <h1 style="font-family: Segoe Script;">The</h1>&nbsp;&nbsp;
-            <h2>Market</h2>
+            <h2 @click="route('/')">Market</h2>
             <v-spacer></v-spacer>
         </v-app-bar>    <!-- The title bar -->
         <v-main>
@@ -20,6 +20,11 @@
 
 <script>
     export default {
+        methods:{
+            route(route) {
+                this.$router.push(route).catch(() => {});
+            },
+        },
         mounted() {
             console.log('Component mounted.')
         }
