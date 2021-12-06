@@ -4,9 +4,11 @@
             app
             color="black"
             dark
-        >
-            <h1 style="font-family: Segoe Script;">The</h1>&nbsp;&nbsp;
-            <h2 @click="route('/')">Market</h2>
+        >   
+            <v-btn @click="route('/')" text>
+                <h1 style="font-family: 'Segoe UI';" class="mt-1">The</h1>&nbsp;&nbsp;
+                <h2 class="mt-2 ml-n2">Market</h2>
+            </v-btn>   
             <v-spacer></v-spacer>
         </v-app-bar>    <!-- The title bar -->
         <v-main>

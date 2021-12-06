@@ -27,9 +27,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      product_details: {}
+    };
+  },
+  methods: {
+    read: function read() {
+      var _this = this;
+
+      axios.get('/api/items/' + this.$route.params.id).then(function (data) {
+        _this.product_details = data.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.read();
   }
 });
 
@@ -119,32 +136,49 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("View Product Component "),
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
+  return _c(
+    "v-container",
+    { attrs: { fluid: "" } },
+    [
+      _c(
+        "v-row",
+        { attrs: { justify: "center" } },
+        [
+          _c(
+            "v-col",
+            [
+              _c(
+                "v-card",
+                [
+                  _c("v-card-title", { staticClass: "text-center" }, [
+                    _vm._v(
+                      "\n                    View Product Component " +
+                        _vm._s(_vm.product_details.name) +
+                        " \n                "
+                    ),
+                  ]),
+                  _vm._v(" "),
+                  _c("v-card-text", [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.product_details.description) +
+                        "\n                "
+                    ),
+                  ]),
+                ],
+                1
               ),
-            ]),
-          ]),
-        ]),
-      ]),
-    ])
-  },
-]
+            ],
+            1
+          ),
+        ],
+        1
+      ),
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -37,7 +37,8 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-        //
+        $item_view = Items::findOrFail($id);
+        return $item_view;
     }
 
     /**
