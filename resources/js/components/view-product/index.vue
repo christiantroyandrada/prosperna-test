@@ -99,7 +99,7 @@ export default {
             axios.post('/api/orders', this.form).then(() => { //this will post the form to the backend and DB
                 this.form.item_id = null;
                 this.form.order_string = null;
-            }).catch((err) => {cconsole.log(err);})
+            }).catch((err) => {console.log(err);})
             console.log(order);
           },
           onError: err => { //function of PayPal API when there is an error

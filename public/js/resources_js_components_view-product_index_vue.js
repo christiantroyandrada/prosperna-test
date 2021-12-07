@@ -137,7 +137,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                       _this2.form.item_id = null;
                       _this2.form.order_string = null;
                     })["catch"](function (err) {
-                      cconsole.log(err);
+                      console.log(err);
                     });
                     console.log(order);
 
