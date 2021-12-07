@@ -133,6 +133,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     _this2.form.order_string = JSON.stringify(order);
                     _this2.paidFor = true;
                     axios.post('/api/orders', _this2.form).then(function () {
+                      //this will post the form to the backend and DB
                       _this2.form.item_id = null;
                       _this2.form.order_string = null;
                     })["catch"](function (err) {

@@ -25,7 +25,7 @@ class OrdersController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $request->validate([                //this function receives the data from the frontend and posts in dataabase
             'item_id' => 'required',
             'paypal_order_id' => 'required',
             'payer_name' => 'required',

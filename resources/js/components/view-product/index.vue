@@ -95,7 +95,8 @@ export default {
             this.form.order_string = JSON.stringify(order);  
             this.paidFor = true;
             
-            axios.post('/api/orders', this.form).then(() => {
+
+            axios.post('/api/orders', this.form).then(() => { //this will post the form to the backend and DB
                 this.form.item_id = null;
                 this.form.order_string = null;
             }).catch((err) => {cconsole.log(err);})
