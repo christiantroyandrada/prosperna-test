@@ -31,6 +31,7 @@ class OrdersController extends Controller
             'payer_name' => 'required',
             'email' => 'required',
             'billing_address' => 'required',
+            'subtotal' => 'required',
             'order_string' => 'required',
 
         ]);
@@ -40,6 +41,7 @@ class OrdersController extends Controller
             'payer_name' => $request->get('payer_name'),
             'email' => $request->get('email'),
             'billing_address' => $request->get('billing_address'),
+            'subtotal' => $request->get('subtotal'),
             'order_string' => $request->get('order_string'),
         ]);
 

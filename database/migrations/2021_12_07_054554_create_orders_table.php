@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->string('payer_name')->nullable();
             $table->string('email')->nullable();
             $table->string('billing_address')->nullable();
+            $table->string('subtotal')->nullable();
             $table->longText('order_string')->nullable();
             $table->timestamps();
         });

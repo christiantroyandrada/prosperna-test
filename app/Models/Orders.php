@@ -17,6 +17,7 @@ class Orders extends Model
                            //order.purchase_units[0].shipping.address.admin_area_1 +
                            //order.purchase_units[0].shipping.address.country_code +
                            //order.purchase_units[0].shipping.address.postal_code
+        'subtotal', //order.purchase_units[0].amount.value + order.purchase_units[0].amount.currency_code
         'order_string'
     ];
 

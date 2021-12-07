@@ -48,6 +48,7 @@ export default {
             payer_name: "",
             email: "",
             billing_address: "",
+            subtotal: "",
             order_string: "",
       },
     };
@@ -89,7 +90,8 @@ export default {
                             order.purchase_units[0].shipping.address.admin_area_2 + ','+
                            order.purchase_units[0].shipping.address.admin_area_1 + ','+
                            order.purchase_units[0].shipping.address.country_code + ','+
-                           order.purchase_units[0].shipping.address.postal_code
+                           order.purchase_units[0].shipping.address.postal_code;
+            this.form.subtotal = order.purchase_units[0].amount.value +' '+ order.purchase_units[0].amount.currency_code
             this.form.order_string = JSON.stringify(order);  
             this.paidFor = true;
             

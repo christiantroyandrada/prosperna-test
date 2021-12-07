@@ -78,6 +78,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         payer_name: "",
         email: "",
         billing_address: "",
+        subtotal: "",
         order_string: ""
       }
     };
@@ -128,6 +129,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     _this2.form.payer_name = order.payer.name.given_name + ' ' + order.payer.name.surname;
                     _this2.form.email = order.payer.email_address;
                     _this2.form.billing_address = order.purchase_units[0].shipping.address.address_line_1 + ',' + order.purchase_units[0].shipping.address.admin_area_2 + ',' + order.purchase_units[0].shipping.address.admin_area_1 + ',' + order.purchase_units[0].shipping.address.country_code + ',' + order.purchase_units[0].shipping.address.postal_code;
+                    _this2.form.subtotal = order.purchase_units[0].amount.value + ' ' + order.purchase_units[0].amount.currency_code;
                     _this2.form.order_string = JSON.stringify(order);
                     _this2.paidFor = true;
                     axios.post('/api/orders', _this2.form).then(function () {
@@ -138,7 +140,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                     });
                     console.log(order);
 
-                  case 12:
+                  case 13:
                   case "end":
                     return _context.stop();
                 }
