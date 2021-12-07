@@ -12,7 +12,7 @@ const routes = [
     {
         component: () => import("../components/landing-page/index.vue"),
         path: "/",
-        name: "view-product",
+        name: "shop-product",
     },
 ];
 

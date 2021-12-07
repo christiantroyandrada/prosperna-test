@@ -7,7 +7,12 @@
 require('./bootstrap');
 import vuetify from "./plugins/vuetify";
 import router from "./router"
+
+
+
 window.Vue = require('vue').default;
+
+
 
 /**
  * The following block of code may be used to automatically register your

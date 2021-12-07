@@ -5448,7 +5448,7 @@ var routes = [{
     return __webpack_require__.e(/*! import() */ "resources_js_components_landing-page_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/landing-page/index.vue */ "./resources/js/components/landing-page/index.vue"));
   },
   path: "/",
-  name: "view-product"
+  name: "shop-product"
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: "history",

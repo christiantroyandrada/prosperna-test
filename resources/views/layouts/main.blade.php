@@ -12,7 +12,7 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script
-    src="https://www.paypal.com/sdk/js?client-id=AYpKICe66PtxRdX481S7eVDEQaKLAgofABs9RPjdo1qafS93.LYJMaqH" defer> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
+    src="https://www.paypal.com/sdk/js?client-id=ASqr1LAJQXq7DI7T3JMQvyYaK3EM4mMSM6PZZd7-dQw0VYlOF2Bbg9UJCNA7tnU-1tSlBtLpCQUm0LNN" defer> // Required. Replace YOUR_CLIENT_ID with your sandbox client ID.
     </script>
 
     <!-- Fonts -->
